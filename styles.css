@@ -1,0 +1,25 @@
+.jumbotron{
+    padding-top: 8rem;
+    background-color: #d6d3d3;
+}
+
+#product{
+    background-color: #d6d3d3;
+}
+
+#contact svg {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    border-top: none !important;
+    padding-top: 0 !important;
+    margin-top: -1px; /* Menutup celah yang mungkin muncul */
+}
+
+section{
+    padding-top: 5rem;
+}
