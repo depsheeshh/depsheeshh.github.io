@@ -20,6 +20,12 @@ footer {
     margin-top: -1px; /* Menutup celah yang mungkin muncul */
 }
 
+#project {
+    background-color: #d6d3d3;
+    margin-top: -5px; /* hilangkan jarak biar wave menyatu */
+    padding-top: 60px; /* tambahkan padding atas secukupnya */
+  }
+
 section{
     padding-top: 5rem;
 }
