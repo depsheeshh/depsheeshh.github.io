@@ -1,573 +1,1215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Depsheeshh | Profile</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Depsheeshh | Muhamad Rifky Depiputra — Portfolio</title>
+  <meta name="description" content="Portfolio pribadi Muhamad Rifky Depiputra — mahasiswa Manajemen Informatika yang fokus di backend development, web3, dan pengembangan perangkat lunak.">
+  <meta name="author" content="Muhamad Rifky Depiputra">
+  <meta name="keywords" content="Muhamad Rifky Depiputra, depsheeshh, web developer, backend developer, Laravel, PHP, JavaScript, portfolio">
+  <meta property="og:title" content="Depsheeshh | Portfolio">
+  <meta property="og:description" content="Portfolio Muhamad Rifky Depiputra — Junior Web Developer & Informatics Student.">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- Devicon (technology icons) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <!-- AOS (Scroll Animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-black navbar-dark shadow-lg fixed-top">
-        <div class="container">
-        <a class="navbar-brand" href="#home">Depsheeshh</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#project">Project</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
 
-      <!-- Home -->
-      <section class="jumbotron text-center" id="home">
-        <img src="img/profile.JPG" alt="profile" width="200" class="rounded-circle img-thumbnail">
-        <h1 class="display-4">Depsheeshh!</h1>
-        <p class="lead"></p>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,192L34.3,170.7C68.6,149,137,107,206,106.7C274.3,107,343,149,411,160C480,171,549,149,617,149.3C685.7,149,754,171,823,197.3C891.4,224,960,256,1029,245.3C1097.1,235,1166,181,1234,154.7C1302.9,128,1371,128,1406,128L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
-      </section>
+  <!-- ====================================================
+       SCROLL PROGRESS BAR (bar tipis di atas layar)
+  ==================================================== -->
+  <div id="scroll-progress" aria-hidden="true"></div>
 
-    <!-- About -->
-    <section id="about">
-      <div class="container">  
-          <div class="row text-center mb-4">
-              <div class="col">
-                <h2>About Me</h2>
-              </div>
-          </div>
-          <div class="row fs-6 justify-content-center text-center">
-            <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000">
-              <!-- <p>Halo! Saya Muhamad Rifky Depiputra, mahasiswa semester 4 program studi Manajemen Informatika di UCIC. Saya memiliki ketertarikan besar di bidang backend development dan mobile app development, serta terus mengembangkan keterampilan dalam pemrograman menggunakan Laravel, PHP, JavaScript, dan Python. Saya pernah mengerjakan proyek sistem reservasi restoran berbasis web, serta aktif di organisasi kampus sebagai Human Resource, yang membentuk kemampuan saya dalam komunikasi, kerja tim, dan problem solving.</p> -->
-              <p>Saya Muhamad Rifky Depiputra, mahasiswa semester 4 program studi Manajemen Informatika yang memiliki ketertarikan besar dalam dunia pengembangan perangkat lunak, khususnya di bidang backend development dan web3 developer. Saat ini, saya aktif mendalami berbagai teknologi seperti Laravel, PHP, JavaScript, dan sesekali bereksperimen dengan Python.
+  <!-- ====================================================
+       NAVBAR
+       - Glassmorphism blur saat scroll
+       - Active section highlight via IntersectionObserver (JS di bawah)
+       - Tombol toggle Light/Dark mode (#theme-toggle)
+  ==================================================== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Depsheeshh</a>
 
-                Saya telah mengerjakan beberapa proyek pengembangan web, salah satunya adalah sistem reservasi restoran yang menjadi pengalaman berharga dalam memahami alur backend dan pemecahan masalah secara langsung. Melalui proyek-proyek tersebut, saya belajar untuk terus meningkatkan kemampuan teknis sekaligus menjaga semangat eksplorasi.</p>
-          </div>
-          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-              <!-- <p>Saat ini saya sedang fokus memperkuat portofolio dan keterampilan teknis, sambil mempersiapkan diri untuk program magang di semester berikutnya sebagai langkah awal memasuki dunia kerja profesional. Saya adalah pribadi yang adaptif, haus akan pembelajaran, dan antusias dalam mengejar perkembangan teknologi terbaru, termasuk Artificial Intelligence dan Web Development Modern. Portofolio ini adalah cerminan dari perjalanan saya sebagai pengembang muda yang terus bertumbuh dan siap memberi kontribusi nyata di industri teknologi.</p> -->
-              <p>Selain dunia pemrograman, saya juga aktif dalam kegiatan organisasi kampus. Hal ini membantu saya mengasah komunikasi interpersonal, kerja tim, dan kemampuan beradaptasi dalam lingkungan kolaboratif. Saya senang berdiskusi, belajar hal baru—terutama yang berkaitan dengan teknologi dan pengembangan proyek digital.
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                Website ini saya buat sebagai media dokumentasi perjalanan belajar dan eksperimen saya di dunia IT. Tidak semua proyek sempurna, namun setiap karya memiliki cerita dan proses yang saya banggakan.
-                
-                Selamat datang di ruang digital saya. Semoga bisa memberikan gambaran tentang siapa saya dan apa yang saya kerjakan.</p>
-          </div>
-          </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#my-keyboard">Equipment</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <!-- Tombol toggle dark/light mode -->
+            <button id="theme-toggle" title="Toggle Light/Dark Mode" aria-label="Toggle theme">
+              <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+            </button>
+          </li>
+        </ul>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#d6d3d3" fill-opacity="1" d="M0,64L20,74.7C40,85,80,107,120,101.3C160,96,200,64,240,69.3C280,75,320,117,360,149.3C400,181,440,203,480,181.3C520,160,560,96,600,85.3C640,75,680,117,720,165.3C760,213,800,267,840,245.3C880,224,920,128,960,96C1000,64,1040,96,1080,128C1120,160,1160,192,1200,176C1240,160,1280,96,1320,112C1360,128,1400,224,1420,272L1440,320L1440,320L1420,320C1400,320,1360,320,1320,320C1280,320,1240,320,1200,320C1160,320,1120,320,1080,320C1040,320,1000,320,960,320C920,320,880,320,840,320C800,320,760,320,720,320C680,320,640,320,600,320C560,320,520,320,480,320C440,320,400,320,360,320C320,320,280,320,240,320C200,320,160,320,120,320C80,320,40,320,20,320L0,320Z"></path></svg>
+    </div>
+  </nav>
+
+  <!-- ====================================================
+       HERO / HOME SECTION
+       - Animated gradient background
+       - Foto profil dengan ring glow animasi
+       - Typing animation subtitle (via GSAP TextPlugin)
+       - Tombol CTA: Lihat Project & Download CV
+       - Social icons (GitHub + Instagram)
+       - Scroll bounce indicator
+  ==================================================== -->
+  <section id="home">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <!-- Foto Profil -->
+      <div class="profile-photo-ring">
+        <img src="img/profile.JPG" alt="Foto Profil Muhamad Rifky Depiputra" class="profile-photo">
+      </div>
+
+      <!-- Nama -->
+      <h1 class="hero-title">Muhamad Rifky Depiputra</h1>
+
+      <!-- Subtitle — diisi via GSAP TextPlugin -->
+      <p class="hero-subtitle lead" id="hero-subtitle"></p>
+
+      <!-- CTA Buttons -->
+      <div class="hero-cta">
+        <a href="#project" class="btn-accent" id="btn-lihat-project">
+          <i class="bi bi-folder2-open"></i>
+          Lihat Project Saya
+        </a>
+        <!-- NOTE: Ganti href di bawah ini dengan link Google Drive / file CV kamu -->
+        <a href="#contact" class="btn-outline-accent" id="btn-hubungi">
+          <i class="bi bi-envelope"></i>
+          Hubungi Saya
+        </a>
+      </div>
+
+      <!-- Social Quick Links -->
+      <div class="hero-social">
+        <a href="https://github.com/depsheeshh" target="_blank" rel="noopener" title="GitHub depsheeshh" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.instagram.com/mrdepi_/" target="_blank" rel="noopener" title="Instagram mrdepi_" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>scroll</span>
+      <i class="bi bi-chevron-double-down"></i>
+    </div>
+
+    <!-- Wave divider ke section About (bg-secondary) -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="wave-to-secondary" fill-opacity="1"
+          d="M0,64L60,58.7C120,53,240,43,360,53.3C480,64,600,96,720,96C840,96,960,64,1080,53.3C1200,43,1320,53,1380,58.7L1440,64L1440,120L0,120Z">
+        </path>
+      </svg>
+    </div>
   </section>
 
-  <!-- Project -->
+  <!-- ====================================================
+       ABOUT SECTION
+       - Kolom kiri: bio teks + daftar identitas (dengan ikon)
+       - Kolom kanan: stats card 2x2 grid
+  ==================================================== -->
+  <section id="about" class="section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Siapa Saya</span>
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Mahasiswa informatika yang passionate dengan dunia teknologi</p>
+      </div>
+
+      <div class="row align-items-center g-5">
+        <!-- Kiri: Teks Bio -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="900">
+          <div class="about-text">
+            <p>Halo! Saya <strong style="color: var(--accent-2);">Muhamad Rifky Depiputra</strong>, mahasiswa semester 4 program studi Manajemen Informatika yang memiliki ketertarikan besar dalam dunia pengembangan perangkat lunak, khususnya di bidang <strong>backend development</strong> dan <strong>web3 developer</strong>.</p>
+
+            <p>Saat ini, saya aktif mendalami berbagai teknologi seperti Laravel, PHP, JavaScript, dan sesekali bereksperimen dengan Python. Saya telah mengerjakan beberapa proyek pengembangan web yang menjadi pengalaman berharga dalam memahami alur backend dan pemecahan masalah secara langsung.</p>
+
+            <p>Selain dunia pemrograman, saya juga aktif dalam kegiatan organisasi kampus — yang membentuk kemampuan komunikasi, kerja tim, dan adaptasi dalam lingkungan kolaboratif.</p>
+          </div>
+
+          <!-- Info identitas dengan ikon -->
+          <ul class="about-identity">
+            <li>
+              <i class="bi bi-mortarboard-fill"></i>
+              <span>Manajemen Informatika — UCIC (Semester 4)</span>
+            </li>
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Indonesia 🇮🇩</span>
+            </li>
+            <li>
+              <i class="bi bi-code-slash"></i>
+              <span>Backend Development & Web3 Developer</span>
+            </li>
+            <li>
+              <i class="bi bi-lightning-fill"></i>
+              <span>Laravel · PHP · JavaScript · Python</span>
+            </li>
+            <li>
+              <i class="bi bi-heart-fill"></i>
+              <span>Open Source · Eksplorasi Teknologi · Kolaborasi</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kanan: Stats Cards -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <!-- NOTE: Angka bisa diubah sesuai update proyek kamu -->
+              <span class="stat-number" data-count="7">0</span>
+              <div class="stat-label">Projects Selesai</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="4">0</span>
+              <div class="stat-label">Semester Aktif</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="5">0</span>
+              <div class="stat-label">Tech Stack</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number" data-count="1">0</span>
+              <div class="stat-label">Tahun Coding</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave ke section Project (bg-primary) -->
+    <div class="wave-divider mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="wave-to-primary" fill-opacity="1"
+          d="M0,96L60,85.3C120,75,240,53,360,48C480,43,600,53,720,64C840,75,960,85,1080,80C1200,75,1320,53,1380,42.7L1440,32L1440,120L0,120Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       PROJECTS SECTION
+       - Filter buttons: All / Web / Laravel / Node.js / AI
+       - Glassmorphism cards dengan hover overlay (Live + GitHub)
+       - data-tags dipakai filter JS
+       CATATAN HARDCODE TAGS:
+         Web       = proyek berbasis HTML/CSS/JS murni
+         Laravel   = proyek pakai Laravel/PHP
+         Node.js   = pakai Node/Express
+         AI        = menggunakan kecerdasan buatan
+  ==================================================== -->
   <section id="project">
     <div class="container">
-      <div class="row text-center mb-4">
-        <div class="col">
-          <h2>My Project</h2>
-        </div>
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Karya Saya</span>
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">Koleksi proyek yang pernah saya bangun dari nol</p>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="100">
-            <img src="project/1.png" class="card-img-top" alt="Game Suit">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h1>Game Suit</h1><br>
-                🎮 Adu strategi batu-gunting-kertas digital! Lawan AI atau temen, dengan animasi kece dan gameplay interaktif. Dibuat pakai JavaScript, simpel tapi seru buat dimainkan kapan aja. Siap uji hoki lo? 🔥
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://depsheeshh.github.io/game-suit/" class="btn btn-dark">Lihat Disini...</a>
-                <a href="https://github.com/depsheeshh/game-suit" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="200">
-            <img src="project/2.png" class="card-img-top" alt="Aplikasi Cuaca">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h3>Aplikasi Pengecek Cuaca Sederhana</h3><br>
-                Website sederhana yang menampilkan informasi cuaca real-time berdasarkan nama kota yang dimasukkan user. Dibuat menggunakan HTML, CSS, dan JavaScript, serta terintegrasi dengan API dari OpenWeatherMap.
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://depsheeshh.github.io/weather-checker-app/" class="btn btn-dark">Lihat Disini...</a>
-                <a href="https://github.com/depsheeshh/weather-checker-app" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="300">
-            <img src="project/3.png" class="card-img-top" alt="Sport AI Bot">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h3>Sport AI Bot by Gemini</h3><br>
-                Proyek ini mengeksplorasi bagaimana sebuah model AI yang luas (Google Gemini) dapat "dilatih" dan difokuskan untuk menjadi ahli dalam satu bidang spesifik. Hasilnya adalah SportBot...
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://sportaibot-gemini.onrender.com/" class="btn btn-dark">Lihat Disini...</a>
-                <a href="https://github.com/depsheeshh/sportaibot-by-gemini" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="300">
-            <img src="project/4.png" class="card-img-top" alt="Sport AI Bot">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h3>Sistem Reservasi Restoran</h3><br>
-                Aplikasi web berbasis Laravel untuk memudahkan pelanggan melakukan reservasi meja secara online. Menyediakan fitur manajemen reservasi, konfirmasi otomatis, dan panel admin untuk mengelola data pelanggan serta jadwal reservasi.
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://github.com/depsheeshh/Reservation-Restaurant-App" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="300">
-            <img src="project/5.png" class="card-img-top" alt="Sport AI Bot">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h3>E-Commerce Sederhana</h3><br>
-                Aplikasi web e-commerce berbasis Laravel dengan fitur CRUD (Create, Read, Update, Delete) untuk produk dan kategori. Sistem ini memungkinkan pengguna untuk melihat produk berdasarkan kategori dan mengelola data produk secara langsung tanpa sistem admin terpisah.
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://github.com/depsheeshh/simple-ecommerce-application" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="300">
-            <img src="project/6.png" class="card-img-top" alt="Sport AI Bot">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h3>Webrophic</h3><br>
-                Sebuah platform blog dinamis yang dibangun dari awal menggunakan Laravel 10. Proyek ini menampilkan fungsionalitas CRUD (Create, Read, Update, Delete) yang lengkap untuk postingan, sistem autentikasi, dan dashboard personal yang informatif. Fitur utamanya mencakup visualisasi data dengan Chart.js dan sistem otorisasi berbasis peran untuk membedakan hak akses antara Admin dan User.
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://github.com/depsheeshh/webrophic" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center mb-3">
-          <div class="card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="750" data-aos-delay="300">
-            <img src="project/7.png" class="card-img-top" alt="Sport AI Bot">
-            <div class="card-body d-flex flex-column">
-              <p class="card-text">
-                <h3>I'm Gym</h3><br>
-                Sebuah aplikasi manajemen member gym yang fungsional, dirancang untuk menyederhanakan proses pendataan anggota. Proyek ini menangani operasi CRUD inti dan dibangun di atas tumpukan teknologi Node.js dengan framework Express.js untuk backend, MongoDB sebagai database, dan EJS sebagai view engine untuk menyajikan halaman dinamis.
-                <br>
-                Saat ini, proyek ini terus berkembang dengan fokus pada optimalisasi dan penambahan fitur-fitur baru untuk meningkatkan fungsionalitasnya.
-              </p>
-              <div class="d-flex align-items-center mt-auto">
-                <a href="https://github.com/depsheeshh/im_gym" class="btn btn-dark ms-2 d-flex align-items-center" title="Lihat Repositori di GitHub">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github me-2" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-                  </svg>
-                  Repositori
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-wrap" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="laravel">Laravel</button>
+        <button class="filter-btn" data-filter="nodejs">Node.js</button>
+        <button class="filter-btn" data-filter="ai">AI</button>
       </div>
+
+      <!-- Project Cards Grid -->
+      <div class="row g-4" id="project-grid">
+
+        <!-- Card 1: Game Suit -->
+        <!-- data-tags: pisahkan tag dengan spasi, cocokkan dengan filter-btn data-filter -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="web">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-img-wrap">
+              <img src="project/1.png" alt="Game Suit — Batu Gunting Kertas">
+              <div class="project-overlay">
+                <a href="https://depsheeshh.github.io/game-suit/" target="_blank" rel="noopener" class="overlay-btn">
+                  <i class="bi bi-play-fill"></i> Live Demo
+                </a>
+                <a href="https://github.com/depsheeshh/game-suit" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Repo
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Game Suit</h3>
+              <p class="project-desc">
+                🎮 Adu strategi batu-gunting-kertas digital! Lawan AI atau temen, dengan animasi kece dan gameplay interaktif. Dibuat pakai JavaScript, simpel tapi seru buat dimainkan kapan aja.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">HTML/CSS</span>
+                <span class="project-tag">Game</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Aplikasi Cuaca -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="web">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-img-wrap">
+              <img src="project/2.png" alt="Aplikasi Pengecek Cuaca">
+              <div class="project-overlay">
+                <a href="https://depsheeshh.github.io/weather-checker-app/" target="_blank" rel="noopener" class="overlay-btn">
+                  <i class="bi bi-play-fill"></i> Live Demo
+                </a>
+                <a href="https://github.com/depsheeshh/weather-checker-app" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Repo
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Aplikasi Pengecek Cuaca</h3>
+              <p class="project-desc">
+                Website sederhana yang menampilkan informasi cuaca real-time berdasarkan nama kota. Terintegrasi dengan API dari OpenWeatherMap menggunakan HTML, CSS, dan JavaScript.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">JavaScript</span>
+                <span class="project-tag">REST API</span>
+                <span class="project-tag">HTML/CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Sport AI Bot -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="ai">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-img-wrap">
+              <img src="project/3.png" alt="Sport AI Bot by Gemini">
+              <div class="project-overlay">
+                <a href="https://sportaibot-gemini.onrender.com/" target="_blank" rel="noopener" class="overlay-btn">
+                  <i class="bi bi-play-fill"></i> Live Demo
+                </a>
+                <a href="https://github.com/depsheeshh/sportaibot-by-gemini" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Repo
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sport AI Bot by Gemini</h3>
+              <p class="project-desc">
+                Proyek yang mengeksplorasi bagaimana Google Gemini dapat "difokuskan" menjadi ahli di satu bidang spesifik. Hasilnya: SportBot — AI khusus olahraga yang informatif.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Google Gemini</span>
+                <span class="project-tag">AI</span>
+                <span class="project-tag">Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Sistem Reservasi Restoran -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="laravel">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-img-wrap">
+              <img src="project/4.png" alt="Sistem Reservasi Restoran">
+              <div class="project-overlay">
+                <a href="https://github.com/depsheeshh/Reservation-Restaurant-App" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Lihat Repository
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Sistem Reservasi Restoran</h3>
+              <p class="project-desc">
+                Aplikasi web berbasis Laravel untuk memudahkan pelanggan melakukan reservasi meja secara online. Fitur: manajemen reservasi, konfirmasi otomatis, dan panel admin.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5: E-Commerce Sederhana -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="laravel">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-img-wrap">
+              <img src="project/5.png" alt="E-Commerce Sederhana">
+              <div class="project-overlay">
+                <a href="https://github.com/depsheeshh/simple-ecommerce-application" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Lihat Repository
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">E-Commerce Sederhana</h3>
+              <p class="project-desc">
+                Aplikasi web e-commerce berbasis Laravel dengan fitur CRUD untuk produk dan kategori. Memungkinkan pengguna melihat produk berdasarkan kategori tanpa admin panel terpisah.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">CRUD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6: Webrophic -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="laravel">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-img-wrap">
+              <img src="project/6.png" alt="Webrophic Blog Platform">
+              <div class="project-overlay">
+                <a href="https://github.com/depsheeshh/webrophic" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Lihat Repository
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Webrophic</h3>
+              <p class="project-desc">
+                Platform blog dinamis dibangun dari nol menggunakan Laravel 10 — CRUD lengkap, autentikasi, dashboard personal, visualisasi data Chart.js, dan otorisasi berbasis peran (Admin/User).
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel 10</span>
+                <span class="project-tag">Chart.js</span>
+                <span class="project-tag">Auth</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7: I'm Gym -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="nodejs">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-img-wrap">
+              <img src="project/7.png" alt="I'm Gym — Manajemen Member">
+              <div class="project-overlay">
+                <a href="https://github.com/depsheeshh/im_gym" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Lihat Repository
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">I'm Gym</h3>
+              <p class="project-desc">
+                Aplikasi manajemen member gym fungsional. Operasi CRUD inti dengan Node.js + Express.js (backend), MongoDB (database), dan EJS (view engine). Terus dikembangkan dengan fitur-fitur baru.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">Express.js</span>
+                <span class="project-tag">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8: Buku Tamu Digital -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="laravel">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-img-wrap">
+              <img src="project/8.png" alt="Buku Tamu Digital">
+              <div class="project-overlay">
+                <a href="https://github.com/depsheeshh/project-magang.git" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Lihat Repository
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Buku Tamu Digital</h3>
+              <p class="project-desc">
+                Aplikasi web berbasis Laravel untuk pencatatan tamu, pengelolaan rapat, dan absensi apel pagi di DKIS Kota Cirebon. Sistem ini membantu meningkatkan efisiensi, akurasi, dan transparansi administrasi instansi.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9: WarungSmart -->
+        <div class="col-md-6 col-lg-4 project-item" data-tags="laravel">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="project-img-wrap">
+              <img src="project/9.png" alt="WarungSmart">
+              <div class="project-overlay">
+                <a href="https://github.com/depsheeshh/warung-smart.git" target="_blank" rel="noopener" class="overlay-btn github-btn">
+                  <i class="bi bi-github"></i> Lihat Repository
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">WarungSmart</h3>
+              <p class="project-desc">
+                Aplikasi web berbasis Laravel untuk digitalisasi operasional warung tradisional. 
+                WarungSmart memudahkan pengelolaan produk, pesanan, kasbon, dan membership 
+                antara admin, supplier, serta customer dalam satu sistem terpadu.
+              </p>
+              <div class="project-tags">
+                <span class="project-tag">Laravel</span>
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">Kasbon</span>
+                <span class="project-tag">Membership</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div><!-- /#project-grid -->
     </div>
 
-
-    <section id="my-keyboard">
-      <div class="container">
-        <div class="row text-center mb-4">
-          <div class="col">
-            <h2>My Equipment</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-3">
-            <div class="keyboard-box">
-              <h4 class="keyboard-name text-light">Marvo</h4>
-              <img src="Tilt/1.png" alt="Piano Cilik" class="keyboard-img">
-              <a href="#" class="btn btn-light keyboard-detail-btn">Lihat Details</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-3">
-            <div class="keyboard-box">
-              <h4 class="keyboard-name text-light">Lenovo Ideapad Slim 3</h4>
-              <img src="Tilt/2.png" alt="Razer Hunstman" class="keyboard-img">
-              <a href="#" class="btn btn-light keyboard-detail-btn">Lihat Details</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-3">
-            <div class="keyboard-box">
-              <h4 class="keyboard-name text-light">Wireless Mouse Robot</h4>
-              <img src="Tilt/3.png" alt="Red Dragon" class="keyboard-img">
-              <a href="#" class="btn btn-light keyboard-detail-btn">Lihat Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#fff" fill-opacity="1" d="M0,128L34.3,128C68.6,128,137,128,206,106.7C274.3,85,343,43,411,64C480,85,549,171,617,176C685.7,181,754,107,823,96C891.4,85,960,139,1029,149.3C1097.1,160,1166,128,1234,117.3C1302.9,107,1371,117,1406,122.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+    <!-- Wave ke Equipment (bg-secondary) -->
+    <div class="wave-divider mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="wave-to-secondary" fill-opacity="1"
+          d="M0,32L80,48C160,64,320,96,480,96C640,96,800,64,960,53.3C1120,43,1280,53,1360,58.7L1440,64L1440,120L0,120Z">
+        </path>
+      </svg>
+    </div>
   </section>
 
-  <!-- Gallery -->
-
-  <!-- <section id="gallery">
+  <!-- ====================================================
+       MY EQUIPMENT SECTION
+       - VanillaTilt 3D cards (dipertahankan dari versi lama)
+       - Keyboard, Laptop, Mouse
+  ==================================================== -->
+  <section id="my-keyboard" class="section-alt">
     <div class="container">
-      <div class="row text-center">
-        <div class="col">
-          <h2>Gallery</h2>
-        </div>
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Setup Saya</span>
+        <h2 class="section-title">My Equipment</h2>
+        <p class="section-subtitle">Perangkat yang menemani hari-hari coding saya</p>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/1.jpg" alt="Picture 1" class="img-fluid gallery-img">
-          </a>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="keyboard-box">
+            <h4 class="keyboard-name">Marvo Gaming Keyboard</h4>
+            <img src="Tilt/1.png" alt="Marvo Gaming Keyboard" class="keyboard-img">
+            <a href="#" class="btn keyboard-detail-btn">Lihat Detail</a>
+          </div>
         </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/2.jpg" alt="Picture 2" class="img-fluid gallery-img">
-          </a>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="keyboard-box">
+            <h4 class="keyboard-name">Lenovo IdeaPad Slim 3</h4>
+            <img src="Tilt/2.png" alt="Lenovo Ideapad Slim 3" class="keyboard-img">
+            <a href="#" class="btn keyboard-detail-btn">Lihat Detail</a>
+          </div>
         </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/3.jpg" alt="Picture 3" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/4.jpg" alt="Picture 4" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/5.jpg" alt="Picture 5" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/6.jpg" alt="Picture 6" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/7.jpg" alt="Picture 7" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/8.jpg" alt="Picture 8" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/9.jpg" alt="Picture 9" class="img-fluid gallery-img">
-          </a>
-        </div>
-        <div class="col-md-3">
-          <a href="#">
-            <img src="gallery/10.jpg" alt="Picture 10" class="img-fluid gallery-img">
-          </a>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="keyboard-box">
+            <h4 class="keyboard-name">Wireless Mouse Robot</h4>
+            <img src="Tilt/3.png" alt="Wireless Mouse Robot" class="keyboard-img">
+            <a href="#" class="btn keyboard-detail-btn">Lihat Detail</a>
+          </div>
         </div>
       </div>
     </div>
-  </section> -->
 
+    <!-- Wave ke Skills (bg-primary) -->
+    <div class="wave-divider mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="wave-to-primary" fill-opacity="1"
+          d="M0,80L120,64C240,48,480,16,720,16C960,16,1200,48,1320,64L1440,80L1440,120L0,120Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SKILLS SECTION
+       - Dibagi 3 kategori: Languages / Frameworks / Tools
+       - Setiap skill punya progress bar (nilai % di bawah)
+       - Progress bar animasi saat elemen masuk viewport
+
+       CATATAN NILAI PROGRESS BAR:
+       Ubah nilai data-progress="XX" (angka 0-100) sesuai
+       kemampuan asli kamu. Semakin tinggi = semakin terisi.
+  ==================================================== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Kemampuan</span>
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-subtitle">Teknologi yang saya gunakan untuk mewujudkan ide menjadi kode</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Kolom 1: Programming Languages -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-category-card">
+            <h3 class="skill-category-title">
+              <i class="bi bi-code-square" style="color: var(--accent-2);"></i>
+              Programming Languages
+            </h3>
+
+            <!-- Ubah data-progress sesuai kemampuan (0-100) -->
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-python-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Python</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="65"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-php-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">PHP</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="78"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-javascript-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">JavaScript</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="70"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-html5-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">HTML5</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="88"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-css3-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">CSS3</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom 2: Frameworks & Libraries -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-category-card">
+            <h3 class="skill-category-title">
+              <i class="bi bi-stack" style="color: var(--accent-2);"></i>
+              Frameworks &amp; Libraries
+            </h3>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-laravel-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Laravel</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="74"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-bootstrap-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Bootstrap</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="82"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-express-original" style="color: var(--text-primary);"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Express.js (dasar)</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="50"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-nodejs-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Node.js (dasar)</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="52"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-mongodb-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">MongoDB (dasar)</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="48"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom 3: Tools & Workflow -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-category-card">
+            <h3 class="skill-category-title">
+              <i class="bi bi-tools" style="color: var(--accent-2);"></i>
+              Tools &amp; Workflow
+            </h3>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-git-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Git</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="76"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-github-original" style="color: var(--text-primary);"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">GitHub</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="80"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-figma-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Figma</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="60"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="devicon-vscode-plain colored"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">VS Code</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="92"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-row">
+              <div class="skill-icon-box">
+                <i class="bi bi-send-fill" style="color: #FF6C37; font-size: 1.4rem;"></i>
+              </div>
+              <div class="skill-meta">
+                <span class="skill-label">Postman</span>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-progress="68"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave ke Contact (bg-secondary) -->
+    <div class="wave-divider mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <path class="wave-to-secondary" fill-opacity="1"
+          d="M0,48L80,58.7C160,69,320,91,480,90.7C640,91,800,69,960,58.7C1120,48,1280,48,1360,48L1440,48L1440,120L0,120Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       CONTACT SECTION
+       - Kolom kiri: Info kontak (Instagram, GitHub, Email)
+       - Kolom kanan: Form — Submit ke Google Apps Script (URL dipertahankan)
+       - Alert sukses muncul setelah submit berhasil
+  ==================================================== -->
+  <section id="contact" class="section-alt">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-label">Let's Connect</span>
+        <h2 class="section-title">Hubungi Saya</h2>
+        <p class="section-subtitle">Ada proyek, kolaborasi, atau sekedar mau ngobrol? Jangan sungkan!</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Info Kontak -->
+        <div class="col-lg-4 col-md-5" data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-info-card">
+            <h3 style="font-size:1.1rem; font-weight:700; color:var(--text-primary); margin-bottom:1.5rem;">
+              Reach Me At
+            </h3>
+
+            <div class="contact-info-row">
+              <div class="contact-info-icon"><i class="bi bi-instagram"></i></div>
+              <div>
+                <span class="contact-info-label">Instagram</span>
+                <a href="https://www.instagram.com/mrdepi_/" target="_blank" rel="noopener" class="contact-info-val">@mrdepi_</a>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-info-icon"><i class="bi bi-github"></i></div>
+              <div>
+                <span class="contact-info-label">GitHub</span>
+                <a href="https://github.com/depsheeshh" target="_blank" rel="noopener" class="contact-info-val">@depsheeshh</a>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <span class="contact-info-label">Lokasi</span>
+                <span class="contact-info-val">Indonesia 🇮🇩</span>
+              </div>
+            </div>
+
+            <div class="contact-info-row">
+              <div class="contact-info-icon"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <span class="contact-info-label">Status</span>
+                <span class="contact-info-val">Mahasiswa Aktif — UCIC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Kontak -->
+        <div class="col-lg-6 col-md-7" data-aos="fade-left" data-aos-delay="150">
+          <div class="contact-form-card">
+            <!-- Alert sukses (tersembunyi, muncul setelah submit berhasil) -->
+            <div class="success-alert d-none" id="successAlert">
+              <i class="bi bi-check-circle-fill"></i>
+              <span><strong>Makasih ya</strong> udah kirim pesan! Saya bakal balas sesegera mungkin 🙏</span>
+            </div>
+
+            <!-- Form — name & action dipertahankan untuk Google Apps Script -->
+            <form name="depsheeshh-contact-form" id="contactForm" novalidate>
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama kamu..." required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="email@kamu.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="no_hp" class="form-label">Nomor Telepon <span style="color:var(--text-muted); font-weight:400;">(opsional)</span></label>
+                <input type="tel" class="form-control" id="no_hp" name="no_hp" placeholder="08xx-xxxx-xxxx">
+              </div>
+              <div class="mb-4">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea class="form-control" id="pesan" rows="4" name="pesan" placeholder="Tulis pesanmu di sini..." required></textarea>
+              </div>
+
+              <!-- Submit button (default) -->
+              <button type="submit" class="btn-submit-form" id="btnSubmit">
+                <i class="bi bi-send-fill me-2"></i>Kirim Pesan
+              </button>
+
+              <!-- Loading state (tersembunyi) -->
+              <button class="btn-loading-form d-none" type="button" id="btnLoading" disabled>
+                <span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>
+                <span>Mengirim...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave ke Footer -->
+    <div class="wave-divider mt-5">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path class="wave-to-secondary" fill-opacity="1"
+          d="M0,64L120,53.3C240,43,480,21,720,21.3C960,21,1200,43,1320,53.3L1440,64L1440,100L0,100Z">
+        </path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       GALLERY OVERLAY (hidden by default)
+  ==================================================== -->
   <div class="overlay" id="imageOverlay">
-    <button id="closeOverlay">Close</button>
-    <img src="" alt="Enlarged Image" id="overlayImage">
-</div>
+    <button id="closeOverlay">&#x2715; Tutup</button>
+    <img src="" alt="Gambar diperbesar" id="overlayImage">
+  </div>
 
-
-  <!-- Skills -->
-
-  <section id="skills" class="py-5 bg-light">
-    <div class="container">
-      <div class="row text-center mb-5">
-        <div class="col">
-          <h2 class="fw-bold">My Skills</h2>
-          <p class="text-muted">Teknologi yang saya gunakan untuk mewujudkan ide menjadi kode.</p>
-        </div>
+  <!-- ====================================================
+       FOOTER
+  ==================================================== -->
+  <footer>
+    <div class="container text-center">
+      <div class="footer-brand">Depsheeshh</div>
+      <!-- NOTE: Update tahun jika perlu -->
+      <p class="footer-copy">Dibuat dengan ❤️ oleh Muhamad Rifky Depiputra &copy; 2026</p>
+      <div class="footer-social mt-3">
+        <a href="https://www.instagram.com/mrdepi_/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://github.com/depsheeshh" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-md-4 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="card text-center h-100 shadow-sm border-0">
-            <div class="card-body">
-              <h4 class="card-title mb-4">💻 Programming Languages</h4>
-              <div class="d-flex flex-wrap justify-content-center gap-3">
-                <div class="skill-item text-center">
-                  <i class="devicon-python-plain colored" style="font-size: 3rem;"></i>
-                  <p>Python</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-php-plain colored" style="font-size: 3rem;"></i>
-                  <p>PHP</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-javascript-plain colored" style="font-size: 3rem;"></i>
-                  <p>JavaScript</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-html5-plain colored" style="font-size: 3rem;"></i>
-                  <p>HTML5</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-css3-plain colored" style="font-size: 3rem;"></i>
-                  <p>CSS3</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="card text-center h-100 shadow-sm border-0">
-            <div class="card-body">
-              <h4 class="card-title mb-4">🧱 Frameworks & Libraries</h4>
-              <div class="d-flex flex-wrap justify-content-center gap-3">
-                <div class="skill-item text-center">
-                  <i class="devicon-laravel-plain colored" style="font-size: 3rem;"></i>
-                  <p>Laravel</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-bootstrap-plain colored" style="font-size: 3rem;"></i>
-                  <p>Bootstrap</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-tailwindcss-plain colored" style="font-size: 3rem;"></i>
-                  <p>Express (dasar)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="card text-center h-100 shadow-sm border-0">
-            <div class="card-body">
-              <h4 class="card-title mb-4">⚙️ Tools & Workflow</h4>
-              <div class="d-flex flex-wrap justify-content-center gap-3">
-                <div class="skill-item text-center">
-                  <i class="devicon-git-plain colored" style="font-size: 3rem;"></i>
-                  <p>Git</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-github-original" style="font-size: 3rem;"></i>
-                  <p>GitHub</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-figma-plain colored" style="font-size: 3rem;"></i>
-                  <p>Figma</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-vscode-plain colored" style="font-size: 3rem;"></i>
-                  <p>VS Code</p>
-                </div>
-                <div class="skill-item text-center">
-                  <i class="devicon-vscode-plain colored" style="font-size: 3rem;"></i>
-                  <p>Postman</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-
-
-  <!-- Contact -->
-
-  <section id="contact">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col">
-          <h2>Contact Us</h2>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="alert alert-dark alert-dismissible fade show d-none alert-close" role="alert">
-            <strong>Makasih ya</strong> udah kirim saran saran keren dari kalian wahai ganteng dan cantik!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
-          <form name="depsheeshh-contact-form">
-            <div class="mb-3">
-              <label for="nama" class="form-label">Nama : </label>
-              <input type="text" class="form-control" id="nama" name="nama">
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="email" name="email">
-            </div>
-            <div class="mb-3">
-              <label for="no_hp" class="form-label">Nomor telepon</label>
-              <input type="tel" class="form-control" id="no_hp" name="no_hp">
-            </div>
-            <div class="mb-3">
-              <label for="pesan" class="form-label">Pesan Curhat</label>
-              <textarea class="form-control" id="pesan" rows="5" name="pesan"></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark btn-submit">Submit</button>
-            <button class="btn btn-dark btn-loading d-none" type="button" disabled>
-              <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-              <span role="status">Loading...</span>
-            </button>
-          </form> 
-        </div>
-      </div>
-    </div>
-    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1440 320"><path fill="#212529"  fill-opacity="1" d="M0,128L30,128C60,128,120,128,180,144C240,160,300,192,360,208C420,224,480,224,540,192C600,160,660,96,720,80C780,64,840,96,900,106.7C960,117,1020,107,1080,96C1140,85,1200,75,1260,85.3C1320,96,1380,128,1410,144L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark p-3 text-light text-center">
-    <p class="mb-0">Dibuat oleh Muhamad Rifky Depiputra &copy; 2025</p>
-    <div>
-      <a href="https://www.instagram.com/mrdepi_/" target="_blank" class="text-light fw-bold text-decoration-none me-3">
-        <i class="bi bi-instagram"></i> mrdepi_
-      </a>
-      <a href="https://github.com/depsheeshh" target="_blank" class="text-light fw-bold text-decoration-none">
-        <i class="bi bi-github"></i> depsheeshh
-      </a>
     </div>
   </footer>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-   <script>
-    const galleryImg = document.querySelectorAll('.gallery-img');
-    galleryImg.forEach((img,i) => {
-      img.dataset.aos = "fade-up";
-      img.dataset.aosDelay = i * 100;
-      img.dataset.aosDuration = 1000;
-    })
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
 
-    AOS.init({
-      once: true,
-      duration: 2000,
-    });
-  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS (Scroll Animations) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GSAP + TextPlugin -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
-  
-   <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxbSg39Gr1vpFsGFERK6WPFuolX8OzRx75zPrXpQYqlrrgsIDJnzaA-f24R8vDc66LR7w/exec'
-    const form = document.forms['depsheeshh-contact-form'];
-    const btnSubmit = document.querySelector('.btn-submit');
-    const btnLoading = document.querySelector('.btn-loading');
-    const alertClose = document.querySelector('.alert-close');
-
-    gsap.registerPlugin(TextPlugin);
-    gsap.to('.lead', {duration: 3, delay: 1, text: 'Junior Web Developer | Informatics Student'});
-    gsap.from('.jumbotron img', { duration: 1, y: -100, ease: 'circ', opacity: 0, delay: 0.5 });
-    gsap.from('.navbar', { duration: 1, y: '-100%', ease: 'circ', opacity: 0 });
-    gsap.from('.display-4', { duration: 1, x: -100, ease: 'back', opacity: 0, delay: .8 });
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      btnSubmit.classList.toggle('d-none');
-      btnLoading.classList.toggle('d-none');
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-          btnSubmit.classList.toggle('d-none');
-          btnLoading.classList.toggle('d-none');
-          alertClose.classList.toggle('d-none');
-          form.reset();
-          console.log('Success!', response)
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+  <!-- VanillaTilt (3D equipment cards) -->
   <script src="vanilla-tilt.min.js"></script>
-  <script type="text/javascript">
-    VanillaTilt.init(document.querySelectorAll  (".keyboard-box"), {
-      max: 35,
-      speed: 700,
-      scale: 1.09,
+
+  <script>
+    /* ==========================================================
+       1. LIGHT / DARK MODE TOGGLE
+       - State disimpan di localStorage agar tetap setelah refresh
+       - Default: dark (dari atribut data-theme="dark" di <html>)
+       - Tombol toggle: #theme-toggle | Icon: #theme-icon
+    ========================================================== */
+    const htmlEl    = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+
+    function applyTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      // Update icon: bulan = dark, matahari = light
+      if (theme === 'dark') {
+        themeIcon.className = 'bi bi-moon-stars-fill';
+        toggleBtn.title = 'Switch ke Light Mode';
+      } else {
+        themeIcon.className = 'bi bi-sun-fill';
+        toggleBtn.title = 'Switch ke Dark Mode';
+      }
+      // Update warna wave SVG agar sesuai tema
+      updateWaveColors();
+    }
+
+    function updateWaveColors() {
+      const isDark = htmlEl.getAttribute('data-theme') === 'dark';
+      const secondaryFill = isDark ? '#13132a' : '#ede9fe';
+      const primaryFill   = isDark ? '#0d0d1a' : '#f5f3ff';
+      document.querySelectorAll('.wave-to-secondary').forEach(p => p.setAttribute('fill', secondaryFill));
+      document.querySelectorAll('.wave-to-primary').forEach(p   => p.setAttribute('fill', primaryFill));
+    }
+
+    // Inisialisasi tema: cek localStorage dulu, lalu system preference
+    (function initTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        applyTheme(saved);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+      }
+    })();
+
+    toggleBtn.addEventListener('click', () => {
+      const current = htmlEl.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ==========================================================
+       2. SCROLL PROGRESS BAR
+       Mengisi bar #scroll-progress sesuai posisi scroll
+    ========================================================== */
+    const scrollBar = document.getElementById('scroll-progress');
+    document.addEventListener('scroll', () => {
+      const scrollTop  = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollFull = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      scrollBar.style.width = ((scrollTop / scrollFull) * 100) + '%';
+    }, { passive: true });
+
+    /* ==========================================================
+       3. ACTIVE NAV LINK (IntersectionObserver)
+       Menandai nav-link aktif berdasarkan section yang sedang terlihat
+    ========================================================== */
+    const navLinks = document.querySelectorAll('.navbar .nav-link[href^="#"]');
+    const sections = document.querySelectorAll('section[id]');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active-nav'));
+          const activeLink = document.querySelector(`.navbar .nav-link[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active-nav');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    /* ==========================================================
+       4. AOS INITIALIZATION
+    ========================================================== */
+    AOS.init({ once: true, duration: 800, easing: 'ease-out-cubic' });
+
+    /* ==========================================================
+       5. GSAP HERO ANIMATIONS
+       - Typing animation subtitle via TextPlugin
+       - Photo ring, nama, dan navbar slide-in
+    ========================================================== */
+    gsap.registerPlugin(TextPlugin);
+
+    // Navbar masuk dari atas
+    gsap.from('#mainNavbar', { duration: 1, y: '-100%', opacity: 0, ease: 'circ.out' });
+    // Ring foto turun dari atas
+    gsap.from('.profile-photo-ring', { duration: 1, y: -80, opacity: 0, ease: 'back.out(1.5)', delay: 0.4 });
+    // Judul dari kiri
+    gsap.from('.hero-title', { duration: 1, x: -60, opacity: 0, ease: 'back.out(1.4)', delay: 0.7 });
+    // Typing teks subtitle
+    gsap.to('#hero-subtitle', {
+      duration: 3, delay: 1.2,
+      text: 'Junior Web Developer | Informatics Student',
+      ease: 'none'
+    });
+    // CTA buttons fade up
+    gsap.from('.hero-cta', { duration: 0.8, y: 30, opacity: 0, delay: 1.5 });
+    // Social icons
+    gsap.from('.hero-social', { duration: 0.8, y: 20, opacity: 0, delay: 1.8 });
+
+    /* ==========================================================
+       6. PROJECT FILTER
+       Klik tombol filter → tampilkan card sesuai data-tags
+    ========================================================== */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Update active state tombol
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projectItems.forEach(item => {
+          const tags = item.dataset.tags || '';
+          if (filter === 'all' || tags.includes(filter)) {
+            item.style.display = '';
+            // Trigger AOS re-observe sederhana
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    /* ==========================================================
+       7. SKILL PROGRESS BAR ANIMATION
+       Progress bar terisi saat section Skills masuk viewport
+       Nilai % diambil dari data-progress di HTML
+    ========================================================== */
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    let skillsAnimated = false;
+
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !skillsAnimated) {
+          skillsAnimated = true;
+          skillBars.forEach(bar => {
+            const progress = bar.dataset.progress || 0;
+            // Set timeout agar transisi CSS berjalan setelah element visible
+            setTimeout(() => { bar.style.width = progress + '%'; }, 200);
+          });
+        }
+      });
+    }, { threshold: 0.2 });
+
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection) skillObserver.observe(skillsSection);
+
+    /* ==========================================================
+       8. STATS COUNTER ANIMATION
+       Angka di stat-card naik dari 0 ke nilai data-count
+    ========================================================== */
+    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    let statsAnimated = false;
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statsAnimated) {
+          statsAnimated = true;
+          statNumbers.forEach(el => {
+            const target = parseInt(el.dataset.count, 10);
+            let current = 0;
+            const step = Math.max(1, Math.floor(target / 30));
+            const interval = setInterval(() => {
+              current += step;
+              if (current >= target) { current = target; clearInterval(interval); }
+              el.textContent = current + (target > 10 ? '' : '+');
+            }, 50);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) statsObserver.observe(aboutSection);
+
+    /* ==========================================================
+       9. CONTACT FORM SUBMIT (Google Apps Script)
+       URL dipertahankan dari versi lama
+    ========================================================== */
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxbSg39Gr1vpFsGFERK6WPFuolX8OzRx75zPrXpQYqlrrgsIDJnzaA-f24R8vDc66LR7w/exec';
+    const contactForm = document.getElementById('contactForm');
+    const btnSubmit   = document.getElementById('btnSubmit');
+    const btnLoading  = document.getElementById('btnLoading');
+    const successAlert = document.getElementById('successAlert');
+
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      btnSubmit.classList.add('d-none');
+      btnLoading.classList.remove('d-none');
+
+      fetch(scriptURL, { method: 'POST', body: new FormData(contactForm) })
+        .then(response => {
+          btnSubmit.classList.remove('d-none');
+          btnLoading.classList.add('d-none');
+          successAlert.classList.remove('d-none');
+          contactForm.reset();
+          console.log('Success!', response);
+          // Sembunyikan alert setelah 6 detik
+          setTimeout(() => successAlert.classList.add('d-none'), 6000);
+        })
+        .catch(error => {
+          btnSubmit.classList.remove('d-none');
+          btnLoading.classList.add('d-none');
+          console.error('Error!', error.message);
+          alert('Gagal kirim pesan. Coba lagi ya!');
+        });
+    });
+
+    /* ==========================================================
+       10. VANILLATILT — Equipment Section 3D Cards
+       Dipertahankan dari versi lama
+    ========================================================== */
+    VanillaTilt.init(document.querySelectorAll('.keyboard-box'), {
+      max: 30,
+      speed: 600,
+      scale: 1.07,
       glare: true,
+      'max-glare': 0.25,
       gyroscope: true,
     });
-  </script>
-  <script type="text/javascript">
+
+    /* ==========================================================
+       11. GALLERY OVERLAY (dipertahankan dari versi lama)
+    ========================================================== */
     document.querySelectorAll('.gallery-img').forEach(img => {
-      img.addEventListener('click', function(event) {
-          event.preventDefault(); // Mencegah halaman kembali ke atas
-  
-          const overlay = document.getElementById('imageOverlay');
-          const overlayImage = document.getElementById('overlayImage');
-  
-          overlayImage.src = this.src;
-          overlay.classList.add('active');
+      img.addEventListener('click', function(e) {
+        e.preventDefault();
+        const overlay = document.getElementById('imageOverlay');
+        document.getElementById('overlayImage').src = this.src;
+        overlay.classList.add('active');
       });
-  });
-  
-  // Tutup overlay saat tombol close diklik
-  document.getElementById('closeOverlay').addEventListener('click', function() {
+    });
+
+    document.getElementById('closeOverlay').addEventListener('click', () => {
       document.getElementById('imageOverlay').classList.remove('active');
-  });
-  
-  // Tutup overlay saat area luar gambar diklik
-  document.getElementById('imageOverlay').addEventListener('click', function(event) {
-      if (event.target !== document.getElementById('overlayImage')) {
-          this.classList.remove('active');
+    });
+
+    document.getElementById('imageOverlay').addEventListener('click', function(e) {
+      if (e.target !== document.getElementById('overlayImage')) {
+        this.classList.remove('active');
       }
-  });
-  
-  
+    });
+
+    /* ==========================================================
+       12. INITIAL WAVE COLOR (panggil saat load)
+    ========================================================== */
+    updateWaveColors();
+
   </script>
+
 </body>
 </html>
