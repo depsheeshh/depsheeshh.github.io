@@ -336,13 +336,23 @@ body {
 /* --------------------------------
    7. WAVE DIVIDER
 -------------------------------- */
-.wave-divider { display: block; width: 100%; line-height: 0; }
-.wave-divider svg { display: block; width: 100%; }
+.wave-divider {
+  display: block;
+  width: 100%;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.wave-divider svg { display: block; width: 100%; height: auto; }
 
 /* --------------------------------
    8. SECTION SHARED STYLES
 -------------------------------- */
-section { padding: 5rem 0; transition: background-color 0.4s ease; }
+section {
+  padding: 5rem 0 0;
+  transition: background-color 0.4s ease;
+}
 
 .section-alt { background-color: var(--bg-secondary) !important; }
 
@@ -772,5 +782,5 @@ footer {
   .hero-cta { flex-direction: column; align-items: center; }
   .btn-accent, .btn-outline-accent { width: 100%; justify-content: center; }
   .stat-grid { grid-template-columns: 1fr 1fr; }
-  section { padding: 3.5rem 0; }
+  section { padding: 3rem 0 0; }
 }
